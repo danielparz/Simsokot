@@ -21,7 +21,7 @@ namespace Simsokot
         }
         private ConsoleKeyInfo GetKittenAction()
         {
-            Console.WriteLine("Co chcesz robić z kotem?");
+            Console.WriteLine("Co chcesz robić z kotem? Wybierz odpowiednią opcją i zatwierdz klawiszem Enter:");
             Console.WriteLine("1. Nakarm".PadRight(15) + "2. Baw się".PadRight(15) + "3. Wyczesz".PadRight(15));
             bool isActionCorrect = false;
             ConsoleKeyInfo cki = new ConsoleKeyInfo();
@@ -29,6 +29,7 @@ namespace Simsokot
             {
                 cki = Console.ReadKey();
                 if (cki.Key == ConsoleKey.D1 || cki.Key == ConsoleKey.D2 || cki.Key == ConsoleKey.D3) isActionCorrect = true;
+                if (!isActionCorrect) Console.WriteLine("Wybierz prawidłową opcję!");
             }
             return cki;
         }
